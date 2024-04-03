@@ -1,0 +1,15 @@
+@mixin text($color) {
+    @if map-has-key($theme-colors, $color) {
+        color: map-get($theme-colors, $color);
+    }
+
+    @else {
+        @warn "Color `#{$color}` does not exist in $theme-colors map.";
+    }
+}
+
+@each $color, $value in $theme-colors {
+    .text-#{$color} {
+        @include text($color);
+    }
+}

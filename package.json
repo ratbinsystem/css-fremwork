@@ -1,0 +1,17 @@
+{
+  "name": "css-fremwork",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "watch": "watch \"npm run sass-compile\" ./src/scss",
+    "sass-compile": "concurrently \"node-sass src/scss/styles.scss src/css/styles.css --output-style compressed\""
+  },
+  "devDependencies": {
+    "node-sass": "^9.0.0",
+    "watch": "^1.0.2",
+    "concurrently": "^8.2.2"
+  },
+  "author": "",
+  "license": "ISC"
+}

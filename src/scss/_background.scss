@@ -1,0 +1,15 @@
+@mixin background($color) {
+    @if map-has-key($theme-colors, $color) {
+        background: map-get($theme-colors, $color);
+    }
+
+    @else {
+        @warn "Color `#{$color}` does not exist in $theme-colors map.";
+    }
+}
+
+@each $color, $value in $theme-colors {
+    .bg-#{$color} {
+        @include background($color);
+    }
+}
